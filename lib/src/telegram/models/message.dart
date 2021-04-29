@@ -21,7 +21,7 @@ part of '../model.dart';
 /// https://core.telegram.org/bots/api#message
 @JsonSerializable()
 class Message {
-  int? message_id;
+  int message_id;
   User from;
   Chat? sender_chat;
   int? date;
@@ -78,7 +78,7 @@ class Message {
   InlineKeyboardMarkup? reply_markup;
 
   Message({
-    this.message_id,
+    required this.message_id,
     required this.from,
     this.sender_chat,
     this.date,

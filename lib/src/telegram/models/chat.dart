@@ -21,8 +21,8 @@ part of '../model.dart';
 /// https://core.telegram.org/bots/api#chat
 @JsonSerializable()
 class Chat {
-  int? id;
-  String? type;
+  int id;
+  String type;
   String? title;
   String? username;
   String? first_name;
@@ -39,8 +39,8 @@ class Chat {
   int? linked_chat_id;
   ChatLocation? location;
   Chat({
-    this.id,
-    this.type,
+    required this.id,
+    required this.type,
     this.title,
     this.username,
     this.first_name,

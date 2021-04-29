@@ -22,7 +22,10 @@ class TeleDartMessage extends Message {
   late TeleDart _teledart;
 
   TeleDartMessage(TeleDart teledart, Message message)
-      : super(chat: message.chat, from: message.from) {
+      : super(
+            chat: message.chat,
+            from: message.from,
+            message_id: message.message_id) {
     _teledart = teledart;
     super.message_id = message.message_id;
     super.date = message.date;
