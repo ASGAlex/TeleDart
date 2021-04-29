@@ -1266,15 +1266,13 @@ Map<String, dynamic> _$InlineKeyboardButtonToJson(
 CallbackQuery _$CallbackQueryFromJson(Map<String, dynamic> json) {
   return CallbackQuery(
     id: json['id'] as String?,
-    from: json['from'] == null
-        ? null
-        : User.fromJson(json['from'] as Map<String, dynamic>),
+    from: User.fromJson(json['from'] as Map<String, dynamic>),
     message: json['message'] == null
         ? null
         : Message.fromJson(json['message'] as Map<String, dynamic>),
     inline_message_id: json['inline_message_id'] as String?,
     chat_instance: json['chat_instance'] as String?,
-    data: json['data'] as String?,
+    data: json['data'] as String,
     game_short_name: json['game_short_name'] as String?,
   );
 }
@@ -1289,11 +1287,11 @@ Map<String, dynamic> _$CallbackQueryToJson(CallbackQuery instance) {
   }
 
   writeNotNull('id', instance.id);
-  writeNotNull('from', instance.from?.toJson());
+  val['from'] = instance.from.toJson();
   writeNotNull('message', instance.message?.toJson());
   writeNotNull('inline_message_id', instance.inline_message_id);
   writeNotNull('chat_instance', instance.chat_instance);
-  writeNotNull('data', instance.data);
+  val['data'] = instance.data;
   writeNotNull('game_short_name', instance.game_short_name);
   return val;
 }
