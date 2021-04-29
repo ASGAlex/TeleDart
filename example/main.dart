@@ -39,7 +39,7 @@ void main() {
   // See: https://www.dartlang.org/tutorials/language/streams#methods-that-modify-a-stream
   teledart
       .onMessage(keyword: 'dart')
-      .where((message) => message.text.contains('telegram'))
+      .where((message) => message.text!.contains('telegram'))
       .listen((message) => teledart.replyPhoto(
           message,
           //  io.File('example/dash_paper_plane.png'),
