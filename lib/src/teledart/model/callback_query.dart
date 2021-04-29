@@ -21,7 +21,8 @@ import '../../telegram/model.dart';
 class TeleDartCallbackQuery extends CallbackQuery {
   late TeleDart _teledart;
 
-  TeleDartCallbackQuery(TeleDart teledart, CallbackQuery callbackQuery) {
+  TeleDartCallbackQuery(TeleDart teledart, CallbackQuery callbackQuery)
+      : super(from: callbackQuery.from, data: callbackQuery.data) {
     _teledart = teledart;
     super.id = callbackQuery.id;
     super.from = callbackQuery.from;

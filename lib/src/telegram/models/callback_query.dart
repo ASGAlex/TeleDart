@@ -36,19 +36,19 @@ part of '../model.dart';
 @JsonSerializable()
 class CallbackQuery {
   String? id;
-  User? from;
+  User from;
   Message? message;
   String? inline_message_id;
   String? chat_instance;
-  String? data;
+  String data;
   String? game_short_name;
   CallbackQuery({
     this.id,
-    this.from,
+    required this.from,
     this.message,
     this.inline_message_id,
     this.chat_instance,
-    this.data,
+    required this.data,
     this.game_short_name,
   });
   factory CallbackQuery.fromJson(Map<String, dynamic> json) =>
